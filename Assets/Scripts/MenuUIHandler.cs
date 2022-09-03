@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 public class MenuUIHandler : MonoBehaviour
 {
+
+    public TMP_InputField playerNameInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartNewGame()
     {
+        DataManager.Instance.playerName = playerNameInput.text;
         SceneManager.LoadScene(1);
     }
 
