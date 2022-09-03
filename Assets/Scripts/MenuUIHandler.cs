@@ -15,7 +15,7 @@ public class MenuUIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DataManager.Instance.LoadTopScore();
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartNewGame()
     {
-        DataManager.Instance.playerName = playerNameInput.text;
+        DataManager.Instance.currentPlayerName = playerNameInput.text;
         SceneManager.LoadScene(1);
     }
 
